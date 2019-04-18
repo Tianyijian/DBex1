@@ -5,11 +5,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="510.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="530.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextArea layoutX="262.0" layoutY="33.0" prefHeight="220.0" prefWidth="470.0" />
-      <TextArea layoutX="262.0" layoutY="383.0" prefHeight="95.0" prefWidth="470.0" />
-      <Separator layoutX="219.0" layoutY="6.0" orientation="VERTICAL" prefHeight="493.0" prefWidth="13.0" />
+      <TabPane prefHeight="500.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="查询">
+            <content>
+              <fx:include fx:id="searchPage" source="Search.fxml" />
+            </content>
+          </Tab>
+          <Tab text="插入">
+            <content>
+              <fx:include fx:id="insertPage" source="Insert.fxml" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

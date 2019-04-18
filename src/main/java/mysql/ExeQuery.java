@@ -6,22 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 public class ExeQuery {
 
 	// JDBC 驱动名及数据库 URL
 	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/sct?useSSL=false&serverTimezone=GMT%2B8";
+	static final String DB_URL = "jdbc:mysql://localhost:3306/e-commerce?useSSL=false&serverTimezone=GMT%2B8";
 
 	// 数据库的用户名与密码，需要根据自己的设置
 	static final String USER = "tyj";
 	static final String PASS = "tyj";
-	
+
 	private Connection conn = null;
 	private Statement state = null;
-	
+
 	public ExeQuery() {
 		try {
 			// 注册 JDBC 驱动
@@ -44,26 +41,39 @@ public class ExeQuery {
 		}
 	}
 
-	public ObservableList<Student> exeQuery(String sql) {
-		ObservableList<Student> list = FXCollections.observableArrayList();
+	/**
+	 * 执行sql语句
+	 * 
+	 * @param sql
+	 * @return
+	 */
+	public ResultSet exeQuery(String sql) {
+		ResultSet res = null;
 		try {
-			ResultSet res = state.executeQuery(sql);
-			while (res.next()) {
-				Student stu = new Student();
-				stu.setSid(res.getString("sid"));
-				stu.setSage(res.getInt("sage"));
-				stu.setDid(res.getString("did"));
-				stu.setSclass(res.getString("sclass"));
-				stu.setSsex(res.getString("ssex"));
-				stu.setSname(res.getString("sname"));
-				list.add(stu);
-				System.out.println(stu.toString());
-			}
-			res.close();
+			res = state.executeQuery(sql);
+//			StringBuilder sb = new StringBuilder();
+//			while (res.next()) {
+//				sb.append(res.getString(1));
+//			}
+//			System.out.println(sb.toString());
+//			res.close();
+
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	/**
+	 * 关闭连接
+	 * 
+	 */
+	public void close() {
+		try {
 			state.close();
 			conn.close();
 		} catch (SQLException e) {
-			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} finally {
 			try {
@@ -81,6 +91,6 @@ public class ExeQuery {
 				e.printStackTrace();
 			}
 		}
-		return list;
+
 	}
 }
