@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="510.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea layoutX="262.0" layoutY="33.0" prefHeight="220.0" prefWidth="470.0" />
+      <TextArea layoutX="262.0" layoutY="383.0" prefHeight="95.0" prefWidth="470.0" />
+      <Separator layoutX="219.0" layoutY="6.0" orientation="VERTICAL" prefHeight="493.0" prefWidth="13.0" />
+   </children>
+</AnchorPane>
