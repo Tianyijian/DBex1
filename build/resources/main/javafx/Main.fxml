@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="500.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="查询">
+            <content>
+              <fx:include fx:id="searchPage" source="Search.fxml" />
+            </content>
+          </Tab>
+          <Tab text="插入">
+            <content>
+              <fx:include fx:id="insertPage" source="Insert.fxml" />
+            </content>
+          </Tab>
+            <Tab text="删除">
+               <content>
+                  <fx:include fx:id="deletePage1" source="Delete.fxml" />
+               </content>
+            </Tab>
+            <Tab text="视图">
+              <content>
+                <fx:include fx:id="viewPage" source="View.fxml" />
+              </content>
+            </Tab>
+            <Tab text="索引">
+              <content>
+               	<fx:include fx:id="indexPage" source="Index.fxml" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

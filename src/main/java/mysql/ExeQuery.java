@@ -65,7 +65,6 @@ public class ExeQuery {
 	 * @return
 	 */
 	public String delete(String sql) {
-//		state.ex
 		try {
 			int r = state.executeUpdate(sql);
 			if (r > 0) {
@@ -76,6 +75,19 @@ public class ExeQuery {
 		} catch (SQLException e) {
 			return "违背关系完整性约束，该记录被其它表引用";
 			// e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @param sql
+	 * @return
+	 */
+	public String insert(String sql) {
+		try {
+			int r = state.executeUpdate(sql);
+			return "插入成功，插入行数  " + r;
+		} catch (SQLException e) {
+			return e.getMessage();
 		}
 	}
 

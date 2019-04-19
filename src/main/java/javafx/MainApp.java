@@ -16,9 +16,8 @@ public class MainApp extends Application{
 		Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 		
 		Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         
-        stage.setTitle("Compile");
+        stage.setTitle("DBex1");
         stage.setScene(scene);
         stage.setResizable(false);	//禁止改变窗口大小
         stage.show();

@@ -5,12 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafx.ViewController">
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.ViewController">
    <children>
-      <Label layoutX="112.0" layoutY="37.0" text="文字描述" />
-      <Label layoutX="110.0" layoutY="110.0" text="SQL 语句" />
-      <TextArea fx:id="ta_view_sql" layoutX="110.0" layoutY="140.0" prefHeight="100.0" prefWidth="550.0" />
-      <ChoiceBox fx:id="cb_view_text" layoutX="110.0" layoutY="60.0" prefHeight="30.0" prefWidth="550.0" />
+      <Label layoutX="102.0" layoutY="27.0" text="文字描述" />
+      <Label layoutX="100.0" layoutY="100.0" text="SQL 语句" />
+      <TextArea fx:id="ta_view_sql" layoutX="100.0" layoutY="130.0" prefHeight="100.0" prefWidth="550.0" />
+      <ChoiceBox fx:id="cb_view_text" layoutX="100.0" layoutY="50.0" prefHeight="30.0" prefWidth="550.0" />
    </children>
 </AnchorPane>
