@@ -19,6 +19,21 @@
               <fx:include fx:id="insertPage" source="Insert.fxml" />
             </content>
           </Tab>
+            <Tab text="删除">
+               <content>
+                  <fx:include fx:id="deletePage1" source="Delete.fxml" />
+               </content>
+            </Tab>
+            <Tab text="视图">
+              <content>
+                <fx:include fx:id="viewPage" source="View.fxml" />
+              </content>
+            </Tab>
+            <Tab text="索引">
+              <content>
+               	<fx:include fx:id="indexPage" source="Index.fxml" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
