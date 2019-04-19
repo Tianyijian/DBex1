@@ -51,18 +51,32 @@ public class ExeQuery {
 		ResultSet res = null;
 		try {
 			res = state.executeQuery(sql);
-//			StringBuilder sb = new StringBuilder();
-//			while (res.next()) {
-//				sb.append(res.getString(1));
-//			}
-//			System.out.println(sb.toString());
-//			res.close();
-
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		return res;
+	}
+
+	/**
+	 * 执行删除操作
+	 * 
+	 * @param sql
+	 * @return
+	 */
+	public String delete(String sql) {
+//		state.ex
+		try {
+			int r = state.executeUpdate(sql);
+			if (r > 0) {
+				return "删除成功，删除行数  " + r;
+			} else {
+				return "未找到该记录，删除失败";
+			}
+		} catch (SQLException e) {
+			return "违背关系完整性约束，该记录被其它表引用";
+			// e.printStackTrace();
+		}
 	}
 
 	/**

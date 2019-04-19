@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import mysql.Constant;
-import mysql.ExeQuery;
 
 public class SearchController implements Initializable {
 
@@ -27,11 +26,10 @@ public class SearchController implements Initializable {
 	@FXML
 	private TextArea ta_sql;
 
-	ExeQuery query;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		query = new ExeQuery();
+
 		cb_text.setItems(FXCollections.observableList(Constant.text));
 		cb_text.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -39,7 +37,7 @@ public class SearchController implements Initializable {
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 				String sql = Constant.sql.get(newValue.intValue());
 				ta_sql.setText(sql);
-				ResultSet res = query.exeQuery(sql);
+				ResultSet res = MainApp.query.exeQuery(sql);
 				StringBuilder sb = new StringBuilder();
 				try {
 					ResultSetMetaData rsmd = res.getMetaData();

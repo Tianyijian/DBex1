@@ -59,4 +59,20 @@ public class Constant {
 			add("CREATE INDEX idxGidSid ON sell(g_id, s_id);");
 		}
 	};
+
+	@SuppressWarnings("serial")
+	public static List<String> delete_text = new ArrayList<String>() {
+		{
+			add("删除信用小于3.0的店铺");
+			add("删除店铺的获益小于20的销售记录");
+		}
+	};
+
+	@SuppressWarnings("serial")
+	public static List<String> delete_sql = new ArrayList<String>() {
+		{
+			add("DELETE FROM shop WHERE credit < 3.0;");
+			add("DELETE FROM sell WHERE sell_price < 20;");
+		}
+	};
 }

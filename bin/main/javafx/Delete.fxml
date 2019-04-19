@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafx.DeleteController">
+   <children>
+      <ChoiceBox fx:id="cb_delete_text" layoutX="100.0" layoutY="50.0" prefHeight="30.0" prefWidth="550.0" />
+      <TextArea fx:id="ta_delete_sql" layoutX="100.0" layoutY="130.0" prefHeight="100.0" prefWidth="550.0" />
+      <Label layoutX="100.0" layoutY="100.0" text="SQL 语句" />
+      <TextArea fx:id="ta_delete_res" layoutX="100.0" layoutY="280.0" prefHeight="190.0" prefWidth="550.0" />
+      <Label layoutX="100.0" layoutY="250.0" text="删除结果" />
+      <Label layoutX="102.0" layoutY="27.0" text="文字描述" />
+   </children>
+</AnchorPane>
